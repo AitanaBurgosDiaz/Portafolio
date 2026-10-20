@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aitana Burgos Díaz | Visual & Data Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #212529; }
+        .hero { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 60px 0; }
+        .card { border: none; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; margin-bottom: 25px; }
+        .card:hover { transform: translateY(-5px); }
+        .badge-tag { font-weight: 500; font-size: 0.8rem; margin-right: 5px; }
+        .btn-filter { margin: 5px; border-radius: 20px; font-weight: 600; }
+        .project-img { height: 200px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Aitana Burgos Díaz</h1>
+            <p class="lead text-light">Periodista | Comunicadora Estratégica & Corporativa | Data Analyst</p>
+            <p class="text-secondary small">Proyectos de Visualización en R, Estrategia Digital, Investigación Periodística y Plataformas Testimoniales</p>
+        </div>
+    </header>
+
+    <!-- PORTFOLIO PROJECTS -->
+    <main class="container my-5">
+        
+        <!-- BOTONES DE FILTRO -->
+        <div class="text-center mb-5">
+            <button class="btn btn-dark btn-filter active" onclick="filterProjects('all')">Todos los Proyectos</button>
+            <button class="btn btn-outline-dark btn-filter" onclick="filterProjects('data')">Data Analytics & R</button>
+            <button class="btn btn-outline-dark btn-filter" onclick="filterProjects('corp')">Comunicación Corporativa</button>
+            <button class="btn btn-outline-dark btn-filter" onclick="filterProjects('invest')">Investigación Periodística</button>
+            <button class="btn btn-outline-dark btn-filter" onclick="filterProjects('personal')">Proyectos Personales</button>
+        </div>
+
+        <div class="row" id="project-grid">
+
+            <!-- PROYECTO 1: DATA ANALYTICS EN R -->
+            <div class="col-md-6 col-lg-4 project-item data">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-primary badge-tag">R / ggplot2</span>
+                        <span class="badge bg-secondary badge-tag">Universidad de Birmingham</span>
+                        <h5 class="card-title mt-2 fw-bold">Causas de Muerte en el Reino Unido (2021)</h5>
+                        <p class="card-text text-muted small">Proyecto de visualización cuantitativa en R (Quarto) procesando microdatos de la OMS para identificar patrones de mortalidad según sexo.</p>
+                        <ul class="small text-secondary">
+                            <li>Pasó con <b>Distinción Académica</b>.</li>
+                            <li>Identificación de la Demencia/Alzheimer como la principal causa de muerte en mujeres.</li>
+                            <li>Gráficos interactivos y pirámides comparativas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYECTO 2: GRUPO SECURITY -->
+            <div class="col-md-6 col-lg-4 project-item corp">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-success badge-tag">Grupo Security</span>
+                        <span class="badge bg-secondary badge-tag">Estrategia Digital</span>
+                        <h5 class="card-title mt-2 fw-bold">Estrategia de RRSS & Saber Suma</h5>
+                        <p class="card-text text-muted small">Creación y ejecución de contenidos digitales para sostenibilidad, educación financiera e infografías de coyuntura económica.</p>
+                        <ul class="small text-secondary">
+                            <li>Crecimiento de TikTok de <b>1,000 a 20,000+ seguidores en 6 meses</b>.</li>
+                            <li>Diseño de infografías del IPC junto al economista jefe Felipe Jaque.</li>
+                            <li>Edición del Newsletter mensual <i>Huella Security</i>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYECTO 3: LIBRO FRANKO MELO -->
+            <div class="col-md-6 col-lg-4 project-item invest">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-danger badge-tag">Editorial LOM</span>
+                        <span class="badge bg-secondary badge-tag">Libro (2027)</span>
+                        <h5 class="card-title mt-2 fw-bold">"Franko Melo ha muerto"</h5>
+                        <p class="card-text text-muted small">Investigación de más de 2 años sobre la vida, censura y olvido del poeta chileno Francisco Melo Santos tras la dictadura.</p>
+                        <ul class="small text-secondary">
+                            <li>Revisión de expedientes judiciales y archivos de prensa.</li>
+                            <li>Coordinación de arte e ilustraciones para cada capítulo.</li>
+                            <li>Tesis de grado aprobada con honores en la Universidad de Chile.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYECTO 4: CARTAS AL DESARRAIGO -->
+            <div class="col-md-6 col-lg-4 project-item personal">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark badge-tag">cartasaldesarraigo.org</span>
+                        <span class="badge bg-secondary badge-tag">UX / Dirección</span>
+                        <h5 class="card-title mt-2 fw-bold">Cartas al Desarraigo</h5>
+                        <p class="card-text text-muted small">Plataforma independiente y sin fines de lucro diseñada para visibilizar relatos de la diáspora, personas biculturales y migrantes.</p>
+                        <ul class="small text-secondary">
+                            <li>Fundadora, diseñadora UX y directora editorial.</li>
+                            <li>Repositorio testimonial enfocado en la empatía y la privacidad.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYECTO 5: GEN MISHIMA -->
+            <div class="col-md-6 col-lg-4 project-item invest">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-info text-dark badge-tag">NITSChile</span>
+                        <span class="badge bg-secondary badge-tag">Investigación</span>
+                        <h5 class="card-title mt-2 fw-bold">Estudio de Audiencias: Gen Mishima</h5>
+                        <p class="card-text text-muted small">Estudio cuali-cuantitativo sobre la evolución de la percepción de la primera serie biopunk chilena entre 2008 y 2024.</p>
+                        <ul class="small text-secondary">
+                            <li>Uso de <i>Wayback Machine</i> para rastreo histórico en Twitter/X.</li>
+                            <li>Análisis de televisión de segunda pantalla.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROYECTO 6: EVENTOS & COMUNICACIÓN CORPORATIVA -->
+            <div class="col-md-6 col-lg-4 project-item corp">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-success badge-tag">Grupo Security</span>
+                        <span class="badge bg-secondary badge-tag">Eventos</span>
+                        <h5 class="card-title mt-2 fw-bold">Cobertura "Lo Que De Verdad Importa"</h5>
+                        <p class="card-text text-muted small">Liderazgo de la estrategia de comunicaciones, guion del host y grilla de contenidos para la cobertura en redes sociales.</p>
+                        <ul class="small text-secondary">
+                            <li>Coordinación de guiones e hitos del evento.</li>
+                            <li>Cobertura audiovisual en vivo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function filterProjects(category) {
+            let items = document.querySelectorAll('.project-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            let buttons = document.querySelectorAll('.btn-filter');
+            buttons.forEach(btn => btn.classList.remove('active', 'btn-dark'));
+            buttons.forEach(btn => btn.classList.add('btn-outline-dark'));
+            event.target.classList.remove('btn-outline-dark');
+            event.target.classList.add('btn-dark', 'active');
+        }
+    </script>
+</body>
+</html>
